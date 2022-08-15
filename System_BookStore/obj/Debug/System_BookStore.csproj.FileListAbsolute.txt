@@ -1,0 +1,13 @@
+C:\csharp\System_BookStore\System_BookStore\bin\Debug\DB_BOOKSTORE.mdf
+C:\csharp\System_BookStore\System_BookStore\bin\Debug\DB_BOOKSTORE_log.ldf
+C:\csharp\System_BookStore\System_BookStore\bin\Debug\System_BookStore.exe.config
+C:\csharp\System_BookStore\System_BookStore\bin\Debug\System_BookStore.exe
+C:\csharp\System_BookStore\System_BookStore\bin\Debug\System_BookStore.pdb
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.csproj.AssemblyReference.cache
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.csproj.SuggestedBindingRedirects.cache
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.Properties.Resources.resources
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.csproj.GenerateResource.cache
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.csproj.CoreCompileInputs.cache
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.exe
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.pdb
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.frm_Principal.resources
