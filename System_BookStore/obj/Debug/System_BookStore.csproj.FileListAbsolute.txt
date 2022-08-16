@@ -11,3 +11,4 @@ C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.csproj.Co
 C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.exe
 C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.pdb
 C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.frm_Principal.resources
+C:\csharp\System_BookStore\System_BookStore\obj\Debug\System_BookStore.frm_Associado.resources

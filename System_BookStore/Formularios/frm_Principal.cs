@@ -17,20 +17,25 @@ namespace System_BookStore
             InitializeComponent();
         }
 
-        private void manutencaoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        
+
+        private void associadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Associado obj_frm_Associado = new frm_Associado();
+            obj_frm_Associado.ShowDialog();
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
 
+        private void tm_Principal_Tick(object sender, EventArgs e)
+        {
+            toolStripStatus_Data.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            toolStripStatus_Hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void toolStripStatusLabel_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            Application.Exit();
         }
-
     }
 }
