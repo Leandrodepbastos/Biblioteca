@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorBD.cs" />
     <Compile Include="Classes\1Auxiliar\FuncGeral.cs" />
     <Compile Include="Classes\Associados\AssociadoBD.cs" />
     <Compile Include="Classes\Autores\Autor.cs" />
@@ -86,7 +87,8 @@
     <Compile Include="frm_Associado.Designer.cs">
       <DependentUpon>frm_Associado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FuncionarioBD.cs" />
+    <Compile Include="Classes\Funcionarios\FuncionarioBD.cs" />
+    <Compile Include="Classes\Generos Literarios\GeneroBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frm_Principal.resx">

@@ -1,6 +1,6 @@
 ﻿/****************************************************************
- *  NOME DA CLASSE: AssociadoBD
- *       DESCRIÇÃO: Representação da classe de Banco AssociadoBD
+ *  NOME DA CLASSE: GeneroBD
+ *       DESCRIÇÃO: Representação da classe de Banco GeneroBD
  *                  da bibliotéca.
  *     DT. CRIAÇÃO: -
  *   DT. ALTERAÇÃO: --/--/---- ( -- )
@@ -16,10 +16,10 @@ using System.Windows.Forms;
 
 namespace System_BookStore
 {
-    class AssociadoBD
+    class GeneroBD
     {
-        // Método Destruct
-        ~AssociadoBD() { }
+
+        ~GeneroBD() { }
 
         #region Método Incluir()
         /****************************************************************
@@ -31,43 +31,29 @@ namespace System_BookStore
         *      OBSERVAÇÃO: Utiliza a Classe Connection para acessar o BD.
         ***************************************************************/
 
-        public int Incluir(Associado pobj_Associado)
+        public int Incluir(Genero pobj_Genero)
         {
             int Id = -1;
 
 
             SqlConnection obj_Con = new SqlConnection(Connection.ConnectionPath());
-            
 
-            string s_varDML = "INSERT INTO TB_ASSOCIADO " +
+            string s_varDML = "INSERT INTO TB_GENERO " +
                               "( " +
-                              "S_NM_ASSOCIADO, " +
-                              "S_GEN_ASSOCIADO, " +
-                              "S_MAIL_ASSOCIADO, " +
-                              "S_CEL_ASSOCIADO, " +
-                              "S_CPF_ASSOCIADO " +
+                              "S_TIT_GENERO, " +
                               ") " +
                               "VALUES " +
                               "( " +
-                              "@S_NM_ASSOCIADO, " +
-                              "@S_GEN_ASSOCIADO, " +
-                              "@S_MAIL_ASSOCIADO, " +
-                              "@S_CEL_ASSOCIADO, " +
-                              "@S_CPF_ASSOCIADO " +
+                              "@S_TIT_GENERO, " +
                               "); " +
-                              "SELECT IDENT_CURRENT ('TB_ASSOCIADO') AS ID_CURRENT";
-
+                              "SELECT IDENT_CURRENT ('TB_GENERO') AS ID_CURRENT";
 
             SqlCommand obj_Cmd = new SqlCommand(s_varDML, obj_Con);
 
-            obj_Cmd.Parameters.AddWithValue("@S_NM_ASSOCIADO", pobj_Associado.Nm_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_GEN_ASSOCIADO", pobj_Associado.Gen_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_MAIL_ASSOCIADO", pobj_Associado.Mail_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_CEL_ASSOCIADO", pobj_Associado.Cel_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_CPF_ASSOCIADO", pobj_Associado.CPF_Associado);
-                        
+            obj_Cmd.Parameters.AddWithValue("@S_TIT_GENERO", pobj_Genero.Tit_Genero);
 
-            try   
+
+            try
             {
                 obj_Con.Open();  
 
@@ -94,29 +80,21 @@ namespace System_BookStore
         *   DT. ALTERAÇÃO: --/--/---- ( -- )
         *      CRIADA POR: -
         *      OBSERVAÇÃO: Utiliza a Classe Connection para acessar o BD.
-        ***************************************************************/
+        ****************************************************************/
 
-        public bool Alterar(Associado pobj_Associado)
+        public bool Alterar(Genero pobj_Genero)
         {
             bool b_Alterado = false;
 
             SqlConnection obj_Con = new SqlConnection(Connection.ConnectionPath());
 
-            string s_varDML = "UPDATE TB_ASSOCIADO SET " +
-                              "S_NM_ASSOCIADO  = @S_NM_ASSOCIADO, " +
-                              "S_GEN_ASSOCIADO = @S_GEN_ASSOCIADO, " +
-                              "S_MAIL_ASSOCIADO= @S_MAIL_ASSOCIADO, " +
-                              "S_CEL_ASSOCIADO = @S_CEL_ASSOCIADO, " +
-                              "S_CPF_ASSOCIADO = @S_CPF_ASSOCIADO " +
-                              "WHERE I_COD_ASSOCIADO = @I_COD_ASSOCIADO ";
+            string s_varDML = "UPDATE TB_GENERO SET " +
+                              "S_TIT_GENERO  = @S_TIT_GENERO, " +
+                              "WHERE I_COD_GENERO = @I_COD_GENERO ";
 
             SqlCommand obj_Cmd = new SqlCommand(s_varDML, obj_Con);
-            obj_Cmd.Parameters.AddWithValue("@I_COD_ASSOCIADO", pobj_Associado.Cod_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_NM_ASSOCIADO", pobj_Associado.Nm_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_GEN_ASSOCIADO", pobj_Associado.Gen_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_MAIL_ASSOCIADO", pobj_Associado.Mail_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_CEL_ASSOCIADO", pobj_Associado.Cel_Associado);
-            obj_Cmd.Parameters.AddWithValue("@S_CPF_ASSOCIADO", pobj_Associado.CPF_Associado);
+            obj_Cmd.Parameters.AddWithValue("@I_COD_GENERO", pobj_Genero.Cod_Genero);
+            obj_Cmd.Parameters.AddWithValue("@S_TIT_GENERO", pobj_Genero.Tit_Genero);
 
             try
             {
@@ -138,7 +116,6 @@ namespace System_BookStore
                 return b_Alterado;
             }
         }
-
         #endregion
 
 
@@ -152,17 +129,17 @@ namespace System_BookStore
         *      CRIADA POR: -
         *      OBSERVAÇÃO: Utiliza a Classe Connection para acessar o BD.
         ***************************************************************/
-        public bool Excluir(Associado pobj_Associado)
+        public bool Excluir(Genero pobj_Genero)
         {
             bool b_Excluido = false;
 
             SqlConnection obj_Con = new SqlConnection(Connection.ConnectionPath());
 
-            string s_varDML = "DELETE FROM TB_ASSOCIADO " +
-                              "WHERE I_COD_ASSOCIADO = @I_COD_ASSOCIADO ";
+            string s_varDML = "DELETE FROM TB_GENERO " +
+                              "WHERE I_COD_GENERO = @I_COD_GENERO ";
 
             SqlCommand obj_Cmd = new SqlCommand(s_varDML, obj_Con);
-            obj_Cmd.Parameters.AddWithValue("@I_COD_ASSOCIADO", pobj_Associado.Cod_Associado);
+            obj_Cmd.Parameters.AddWithValue("@I_COD_GENERO", pobj_Genero.Cod_Genero);
 
             try
             {
@@ -188,10 +165,10 @@ namespace System_BookStore
         #endregion
 
 
-        #region Método FindByCodAssociado()
+        #region Método FindByCodGenero()
 
         /****************************************************************
-        *  NOME DO MÉTODO: FindByCodAssociado
+        *  NOME DO MÉTODO: FindByCodGenero
         *       DESCRIÇÃO: Responsável por encontrar o registro na tabela
         *                  mediante ao parametro passado.
         *     DT. CRIAÇÃO: -
@@ -199,16 +176,15 @@ namespace System_BookStore
         *      CRIADA POR: -
         *      OBSERVAÇÃO: Utiliza a Classe Connection para acessar o BD.
         ***************************************************************/
-        public Associado FindByCodAssociado(Associado pobj_Associado)
+        public Genero FindByCodGenero(Genero pobj_Genero)
         {
-
             SqlConnection obj_Con = new SqlConnection(Connection.ConnectionPath());
 
-            string s_varDML = "SELECT * FROM TB_ASSOCIADO " +
-                              "WHERE I_COD_ASSOCIADO = @I_COD_ASSOCIADO ";
+            string s_varDML = "SELECT * FROM TB_GENERO " +
+                              "WHERE I_COD_GENERO = @I_COD_GENERO ";
 
             SqlCommand obj_Cmd = new SqlCommand(s_varDML, obj_Con);
-            obj_Cmd.Parameters.AddWithValue("@I_COD_ASSOCIADO", pobj_Associado.Cod_Associado);
+            obj_Cmd.Parameters.AddWithValue("@I_COD_GENERO", pobj_Genero.Cod_Genero);
 
             try
             {
@@ -219,48 +195,45 @@ namespace System_BookStore
                 {
                     obj_Dtr.Read();
 
-                    pobj_Associado.Nm_Associado = obj_Dtr["S_NM_ASSOCIADO"].ToString();
-                    pobj_Associado.CPF_Associado = obj_Dtr["S_CPF_ASSOCIADO"].ToString();
-                    pobj_Associado.Cel_Associado = obj_Dtr["S_CEL_ASSOCIADO"].ToString();
-                    pobj_Associado.Mail_Associado = obj_Dtr["S_MAIL_ASSOCIADO"].ToString();
-                    pobj_Associado.Gen_Associado = obj_Dtr["S_GEN_ASSOCIADO"].ToString();
+                    pobj_Genero.Tit_Genero = obj_Dtr["S_TIT_GENERO"].ToString();
 
                     obj_Con.Close();
                     obj_Dtr.Close();
 
-                    return pobj_Associado;
+                    return pobj_Genero;
                 }
                 else
                 {
                     obj_Con.Close();
-                    return pobj_Associado;
+                    return pobj_Genero;
                 }
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message, "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return pobj_Associado;
+                return pobj_Genero;
             }
         }
         #endregion
 
 
-        #region Método FindAllAssociado()
+        #region Método FindAllGenero()
 
         /****************************************************************
-        *  NOME DO MÉTODO: FindAllAssociado
+        *  NOME DO MÉTODO: FindAllGenero
         *       DESCRIÇÃO: Responsável por encontrar todos os registros 
         *                  na tabela.
         *     DT. CRIAÇÃO: -
         *   DT. ALTERAÇÃO: --/--/---- ( -- )
         *      CRIADA POR: -
         *      OBSERVAÇÃO: Utiliza a Classe Connection para acessar o BD.
-        ***************************************************************/
-        public List<Associado> FindAllAssociado()
+        ****************************************************************/
+
+        public List<Genero> FindAllGenero()
         {
             SqlConnection obj_Con = new SqlConnection(Connection.ConnectionPath());
 
-            string s_varDML = "SELECT * FROM TB_ASSOCIADO ";
+            string s_varDML = "SELECT * FROM TB_GENERO ";
 
             SqlCommand obj_Cmd = new SqlCommand(s_varDML, obj_Con);
 
@@ -269,22 +242,18 @@ namespace System_BookStore
                 obj_Con.Open();
                 SqlDataReader obj_Dtr = obj_Cmd.ExecuteReader();
 
-                List<Associado> lista = new List<Associado>();
+                List<Genero> lista = new List<Genero>();
 
                 if (obj_Dtr.HasRows)
                 {
-                    Associado obj_Associado = new Associado();
+                    Genero obj_Genero = new Genero();
 
                     while (obj_Dtr.Read())
                     {
-                        obj_Associado.Cod_Associado = Convert.ToInt16(obj_Dtr["I_COD_ASSOCIADO"].ToString());
-                        obj_Associado.Nm_Associado = obj_Dtr["S_NM_ASSOCIADO"].ToString();
-                        obj_Associado.CPF_Associado = obj_Dtr["S_CPF_ASSOCIADO"].ToString();
-                        obj_Associado.Cel_Associado = obj_Dtr["S_CEL_ASSOCIADO"].ToString();
-                        obj_Associado.Mail_Associado = obj_Dtr["S_MAIL_ASSOCIADO"].ToString();
-                        obj_Associado.Gen_Associado = obj_Dtr["S_GEN_ASSOCIADO"].ToString();
+                        obj_Genero.Cod_Genero = Convert.ToInt16(obj_Dtr["I_COD_GENERO"].ToString());
+                        obj_Genero.Tit_Genero = obj_Dtr["S_TIT_GENERO"].ToString();
 
-                        lista.Add(obj_Associado);
+                        lista.Add(obj_Genero);
                     }
 
                     obj_Con.Close();
@@ -295,13 +264,13 @@ namespace System_BookStore
                 else
                 {
                     obj_Con.Close();
-                    return new List<Associado>();
+                    return new List<Genero>();
                 }
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message, "ERRO FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new List<Associado>();
+                return new List<Genero>();
             }
         }
         #endregion

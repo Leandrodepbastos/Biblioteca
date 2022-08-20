@@ -21,7 +21,7 @@ namespace System_BookStore
 							3 - 
 
 
-		 */
+		 ***********************************************************************/
 		public void StatusBtn(Form pobj_Form, int p_Status)
         {
 			foreach (Control pnl in pobj_Form.Controls)
@@ -122,12 +122,5 @@ namespace System_BookStore
                 }
             }
         }
-
-
-
-
-
-
-
 	}
 }

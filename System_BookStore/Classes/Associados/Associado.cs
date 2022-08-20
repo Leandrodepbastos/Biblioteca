@@ -2,9 +2,9 @@
  *  NOME DA CLASSE: Associado
  *       DESCRIÇÃO: Esta classe de objeto representa o Associado
  *                  da bibliotéca.
- *     DT. CRIAÇÃO: 27/06/2022
+ *     DT. CRIAÇÃO: -
  *   DT. ALTERAÇÃO: --/--/---- ( -- )
- *      CRIADA POR: mFacine (Monstro)
+ *      CRIADA POR: -
  ***************************************************************/
 using System;
 using System.Collections.Generic;

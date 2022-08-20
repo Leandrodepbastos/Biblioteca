@@ -8,17 +8,26 @@ namespace System_BookStore
 {
     class Genero
     {
-        // Método Destruct
 
-
-
+        ~Genero() { }
 
         #region Atributos Privados
-
+        private int v_Cod_Genero = -1;
+        private string v_Tit_Genero = "";
         #endregion
 
-        #region Métodos Públicos
+        #region Metodos Públicos
+        public int Cod_Genero
+        {
+            get => v_Cod_Genero;
+            set => v_Cod_Genero = value;
+        }
 
+        public string Tit_Genero
+        {
+            get => v_Tit_Genero;
+            set => v_Tit_Genero = value;
+        }
         #endregion
     }
 }
