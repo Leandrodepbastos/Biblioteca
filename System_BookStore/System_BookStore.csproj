@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorBD.cs" />
+    <Compile Include="Classes\Autores\AutorBD.cs" />
     <Compile Include="Classes\1Auxiliar\FuncGeral.cs" />
     <Compile Include="Classes\Associados\AssociadoBD.cs" />
     <Compile Include="Classes\Autores\Autor.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="Classes\Itens\Item.cs" />
     <Compile Include="Classes\Livros\Livro.cs" />
     <Compile Include="Classes\Nacionalidades\Nacionalidade.cs" />
+    <Compile Include="EmprestimoBD.cs" />
     <Compile Include="Formularios\frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
