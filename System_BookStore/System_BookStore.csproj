@@ -91,7 +91,7 @@
     <Compile Include="Classes\Generos Literarios\GeneroBD.cs" />
     <Compile Include="Classes\Nacionalidades\NacionalidadeBD.cs" />
     <Compile Include="Classes\Livros\LivroBD.cs" />
-    <Compile Include="ItemBD.cs" />
+    <Compile Include="Classes\Itens\ItemBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frm_Principal.resx">
