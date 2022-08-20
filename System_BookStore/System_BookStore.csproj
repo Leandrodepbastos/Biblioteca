@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Classes\Funcionarios\FuncionarioBD.cs" />
     <Compile Include="Classes\Generos Literarios\GeneroBD.cs" />
+    <Compile Include="NacionalidadeBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frm_Principal.resx">
